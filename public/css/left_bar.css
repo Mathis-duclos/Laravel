@@ -37,11 +37,27 @@ a{
 }
 
 /* Navigation */
+
+/* Wrapper to allow flex bottom alignment */
+.header-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Navigation inside sidebar */
 .site-header nav {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    flex: 1;
     padding: 0 10px;
+}
+
+.nav-bottom {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 /* Liens */
@@ -56,6 +72,7 @@ a{
     transition: background .2s ease-in-out;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-bottom: 10px;
 }
 
 .site-header nav a:hover,
@@ -90,4 +107,11 @@ a{
 /* Décaler le contenu du site pour ne pas être sous la sidebar */
 body {
     margin-left: 220px;
+}
+
+/* Séparation Accueil et Dashboard */
+.nav-top {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* espace entre Accueil et Dashboard */
 }
