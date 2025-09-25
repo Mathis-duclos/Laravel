@@ -32,14 +32,14 @@
         <div class="mb-3">
             <label for="title" class="form-label">Titre</label>
             <input type="text" name="title" id="title" class="form-control"
-                   value="{{ old('title', $article->title) }}" required>
+                    value="{{ old('title', $article->title) }}" required>
         </div>
 
         {{-- Éditeur --}}
         <div class="mb-3">
             <label for="editeur" class="form-label">Éditeur</label>
             <input type="text" name="editeur" id="editeur" class="form-control"
-                   value="{{ old('editeur', $article->editeur) }}">
+                    value="{{ old('editeur', $article->editeur) }}">
         </div>
 
         {{-- Contenu --}}
@@ -52,14 +52,14 @@
         <div class="mb-3">
             <label for="image_url" class="form-label">Image (URL publique)</label>
             <input type="text" name="image_url" id="image_url" class="form-control"
-                   value="{{ old('image_url', $article->image_url) }}">
+                    value="{{ old('image_url', $article->image_url) }}">
             @php $previewUrl = trim((string) old('image_url', $article->image_url)); @endphp
             @if($previewUrl !== '')
                 <div class="mt-2">
                     <small class="text-muted">Aperçu :</small><br>
                     <img src="{{ $previewUrl }}" alt="Aperçu"
-                         style="max-width: 200px; height: auto"
-                         onerror="this.style.display='none'">
+                        style="max-width: 200px; height: auto"
+                        onerror="this.style.display='none'">
                 </div>
             @endif
         </div>
@@ -105,7 +105,7 @@
         <div class="mb-3">
             <label for="note" class="form-label">Note (1 à 10)</label>
             <input type="number" name="note" id="note" class="form-control" min="1" max="10"
-                   value="{{ old('note', $article->note) }}" required>
+                    value="{{ old('note', $article->note) }}" required>
         </div>
 
         {{-- Review (préremplie) --}}
@@ -126,11 +126,17 @@
             <textarea name="points_negatifs" id="points_negatifs" class="form-control" rows="3">{{ old('points_negatifs', $article->points_negatifs) }}</textarea>
         </div>
 
+        {{-- Musique (préremplie) --}}
+        <div class="mb-3">
+            <label for="musique" class="form-label">Musique</label>
+            <input type="text" name="musique" id="musique" class="form-control"
+                    value="{{ old('musique', $article->musique) }}">
+
         {{-- Auteur de la review (prérempli) --}}
         <div class="mb-3">
             <label for="auteur_review" class="form-label">Auteur de la review</label>
             <input type="text" name="auteur_review" id="auteur_review" class="form-control"
-                   value="{{ old('auteur_review', $article->auteur_review) }}">
+                    value="{{ old('auteur_review', $article->auteur_review) }}">
         </div>
 
         <div class="d-flex gap-2">

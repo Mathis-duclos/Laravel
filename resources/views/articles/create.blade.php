@@ -102,6 +102,12 @@
             <textarea name="points_negatifs" id="points_negatifs" class="form-control" rows="3"></textarea>
         </div>
 
+        <!-- Musique -->
+        <div class="mb-3">
+            <label for="musique" class="form-label">Musique</label>
+            <input type="text" name="musique" id="musique" class="form-control">
+        </div>
+
         <!-- Auteur de la review -->
         <div class="mb-3">
             <label for="auteur_review" class="form-label">Auteur de la review</label>

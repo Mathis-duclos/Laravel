@@ -36,6 +36,8 @@ class ArticleController extends Controller
             'points_positifs'  => 'nullable|string',
             'points_negatifs'  => 'nullable|string',
             'auteur_review'    => 'nullable|string|max:255',
+            'editeur'          => 'nullable|string|max:255',
+            'musique'         => 'nullable|string|max:255',
         ]);
 
         // ---- Création ----
@@ -54,6 +56,7 @@ class ArticleController extends Controller
         $article->points_negatifs  = $request->input('points_negatifs');
         $article->auteur_review    = $request->input('auteur_review');
         $article->editeur         = $request->input('editeur');
+        $article->musique         = $request->input('musique');
 
         // Plus d'upload de fichier : on ne touche pas à $article->image
 
@@ -92,6 +95,7 @@ class ArticleController extends Controller
             'points_negatifs'  => 'nullable|string',
             'auteur_review'    => 'nullable|string|max:255',
             'editeur'          => 'nullable|string|max:255',
+            'musique'          => 'nullable|string|max:255',
         ]);
 
         // ---- Mises à jour ----
@@ -108,6 +112,7 @@ class ArticleController extends Controller
         $article->points_negatifs  = $request->input('points_negatifs');
         $article->auteur_review    = $request->input('auteur_review');
         $article->editeur          = $request->input('editeur');
+        $article->musique          = $request->input('musique');
 
         // Plus d'upload de fichier
 

@@ -23,6 +23,28 @@
             >
         @endif
 
+        @if(!empty($article->musique))
+            <div class="mb-3">
+                <audio id="audioPlayer" src="{{ $article->musique }}" preload="none"></audio>
+                <button type="button" class="btn btn-primary" id="playPauseBtn" onclick="toggleAudio()">
+                    ▶️ Play
+                </button>
+            </div>
+            <script>
+                function toggleAudio() {
+                    const audio = document.getElementById('audioPlayer');
+                    const btn = document.getElementById('playPauseBtn');
+                    if (audio.paused) {
+                        audio.play();
+                        btn.textContent = '⏸️ Pause';
+                    } else {
+                        audio.pause();
+                        btn.textContent = '▶️ Play';
+                    }
+                }
+            </script>
+        @endif
+
         <h1 class="h3 mb-1">{{ $article->title }}</h1>
 
         <div class="text-muted mb-2">
@@ -108,7 +130,7 @@
             @if(auth()->user()->admin == 1)
             <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-warning">Modifier</a>
             <form action="{{ route('articles.destroy', $article->id) }}" method="POST"
-                  onsubmit="return confirm('Supprimer cet article ?');" class="d-inline">
+                    onsubmit="return confirm('Supprimer cet article ?');" class="d-inline">
                 @csrf
                 @method('DELETE')
                 <button class="btn btn-danger">Supprimer</button>
