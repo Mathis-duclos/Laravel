@@ -24,23 +24,33 @@
             <div class="info-box">
                 @if(!empty($article->musique))
                     <div class="mb-3">
-                        <audio id="audioPlayer" src="{{ $article->musique }}" preload="none"></audio>
-                        <button type="button" class="btn btn-primary" id="playPauseBtn" onclick="toggleAudio()">
-                            ▶️ Play
-                        </button>
+                        <audio id="audioPlayer" src="{{ $article->musique }}" preload="auto"></audio>
+                        <button type="button" class="btn btn-primary" id="playPauseBtn">⏸️ Pause</button>
                     </div>
                     <script>
-                        function toggleAudio() {
+                        document.addEventListener('DOMContentLoaded', function() {
                             const audio = document.getElementById('audioPlayer');
                             const btn = document.getElementById('playPauseBtn');
-                            if (audio.paused) {
-                                audio.play();
-                                btn.textContent = '⏸️ Pause';
-                            } else {
-                                audio.pause();
-                                btn.textContent = '▶️ Play';
+
+                            // Essai de lecture automatique
+                            const playPromise = audio.play();
+                            if (playPromise !== undefined) {
+                                playPromise.catch(() => {
+                                    // Si échec, bouton affichera "Play"
+                                    btn.textContent = '▶️ Play';
+                                });
                             }
-                        }
+
+                            btn.addEventListener('click', function() {
+                                if (audio.paused) {
+                                    audio.play();
+                                    btn.textContent = '⏸️ Pause';
+                                } else {
+                                    audio.pause();
+                                    btn.textContent = '▶️ Play';
+                                }
+                            });
+                        });
                     </script>
                 @endif
 
