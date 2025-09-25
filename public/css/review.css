@@ -1,0 +1,85 @@
+/* Supprimer marges/paddings par défaut */
+html, body {
+    margin: 0;
+    padding: 0; 
+}
+
+
+/* Image en haut en cover */
+.container img {
+    display: block;
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 0;
+    margin-bottom: 20px;
+}
+
+/* Deux colonnes spécifiques à la page review */
+.review-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* Colonne 1 */
+.colonne-gauche {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Colonne 2 */
+.colonne-droite {
+    display: flex;
+    flex-direction: column;
+    gap: 0; 
+}
+
+/* Image du background */
+
+html{
+    background-image: url('https://cdn.discordapp.com/attachments/1420762958706901106/1420763074499186688/BG_stars.jpg?ex=68d69439&is=68d542b9&hm=1aec5d9b9448c593af289b871d6459bc120fac20e2c1a0565600ed5387094967&');
+    background-repeat: repeat;
+    background-position: top left;
+    background-size: auto;
+    margin: 0;
+    padding: 0;
+}
+
+
+.info-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 16px;        
+    border-radius: 8px;  
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15); 
+}
+
+/* Critique box  column 2 */
+.review-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    margin-bottom: 24px; 
+}
+
+/* Points positifs */
+.points-positifs-box {
+    background-color: rgba(212, 237, 218, 0.8); 
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #c3e6cb;
+    margin-bottom: 24px; 
+}
+
+/* Points négatifs */
+.points-negatifs-box {
+    background-color: rgba(248, 215, 218, 0.8); 
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #f5c6cb;
+    margin-bottom: 0;
+}
