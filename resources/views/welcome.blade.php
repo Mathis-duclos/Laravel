@@ -59,7 +59,7 @@
                                     — {{ $article->editeur }}
                                 @endif
                             </small>
-                            <p>{{ Str::limit($article->content, 200) }}</p>
+                            <p>{{ Str::limit($article->content, 150) }}</p>
                         </div>
                     </div>
                 @endforeach
