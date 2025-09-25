@@ -52,9 +52,8 @@
                         <!-- Partie blanche cachée, visible uniquement au hover -->
                         <div class="hidden-text">
                             <small>
-                                Publié le {{ $article->created_at->format('d/m/Y H:i') }}
                                 @if($article->plateforme)
-                                    — {{ $article->plateforme }}
+                                    {{ $article->plateforme }}
                                 @endif
                                 @if($article->editeur)
                                     — {{ $article->editeur }}
