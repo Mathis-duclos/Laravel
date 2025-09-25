@@ -8,15 +8,22 @@
 <body>
     @include('partials.header')
 
+@section('content')
+<link rel="stylesheet" href="{{ asset('css/home.css') }}">
+@include('partials.header')
+
     <div class="min-h-screen">
         @yield('content')
     </div>
 
-    <h1>Bienvene sur NOM DU SITE!</h1>
-    <p>This is the welcome page.</p>
+    <section class="hero-section">
+        <h1>Bienvene sur NOM DU SITE!</h1>
+        <p>This is the welcome page.</p>
+
+    </section>
 
     {{-- Derniers articles --}}
-    <section style="margin-top:20px;">
+    <section class="articles-section">
         <h2>Articles récents</h2>
 
         @if($articles->count() > 0)
