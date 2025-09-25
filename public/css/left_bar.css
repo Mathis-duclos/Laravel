@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+
+/* ====== NAVBAR VERTICALE GAUCHE ====== */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;          /* largeur fixe */
+    height: 100vh;         /* prend toute la hauteur */
+    background: #29303D;   /* bleu nuit */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px 0;
+    transition: width .3s ease-in-out;
+    font-family: 'Ubuntu', sans-serif;
+    z-index: 1000;
+}
+
+/* Logo */
+.site-header .logo {
+    display: block;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+/* Navigation */
+.site-header nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 10px;
+}
+
+/* Liens */
+.site-header nav a,
+.site-header nav .username,
+.site-header nav form button {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 14px;
+    border-radius: 6px;
+    transition: background .2s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.site-header nav a:hover,
+.site-header nav form button:hover {
+    background: #3A4354;
+}
+
+/* Username simple */
+.username {
+    display: block;
+    color: #ddd;
+    font-size: 13px;
+    padding: 0 14px;
+    margin-bottom: 10px;
+}
+
+/* Boutons */
+.btn {
+    display: block;
+    text-align: left;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+}
+
+/* Déconnexion rouge */
+.btn-danger {
+    color: #f87171 !important;
+}
+
+/* Décaler le contenu du site pour ne pas être sous la sidebar */
+body {
+    margin-left: 220px;
+}

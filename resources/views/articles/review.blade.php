@@ -2,6 +2,8 @@
 
 @section('content')
 
+ <link rel="stylesheet" href="{{ asset('css/review.css') }}">
+
     <body> 
         <body>
     @include('partials.header')

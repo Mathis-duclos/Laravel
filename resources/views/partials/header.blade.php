@@ -1,11 +1,12 @@
-<header style="padding:10px 16px; border-bottom:1px solid #ddd;">
-    <div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
+<link rel="stylesheet" href="{{ asset('css/left_bar.css') }}">
+
+<header class="site-header">
+    <div class="header-content">
         <div>
-            <a href="{{ url('/') }}" style="text-decoration:none; font-weight:700;">Nintenga</a>
+            <a href="{{ url('/') }}" class="logo">Nintenga</a>
         </div>
 
-        <nav style="display:flex; align-items:center; gap:8px;">
-            {{-- Liens publics utiles (optionnels) --}}
+        <nav>
             <a href="{{ url('/') }}">Accueil</a>
 
             @guest
@@ -16,21 +17,20 @@
             @endguest
 
             @auth
-                <span style="margin-left:8px;">{{ Auth::user()->name }}</span>
+                <span class="username">{{ Auth::user()->name }}</span>
 
-                {{-- Liens privés (optionnels) --}}
-@auth
-    @if(auth()->user()->admin == 1)
-        <a href="{{ route('articles.index') }}" class="btn btn-sm btn-outline-secondary">Dashboard</a>
-    @endif
-@endauth
+                @if(auth()->user()->admin == 1)
+                    <a href="{{ route('articles.index') }}" class="btn btn-sm btn-outline-secondary">Dashboard</a>
+                @endif
 
-                {{-- Déconnexion (POST) --}}
-                <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+                <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <button type="submit" class="btn btn-sm btn-danger">Déconnexion</button>
                 </form>
             @endauth
         </nav>
     </div>
+
+    {{-- ✅ La barre verticale --}}
+    <div class="header-bar"></div>
 </header>
