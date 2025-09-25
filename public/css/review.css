@@ -1,17 +1,12 @@
 @font-face {
-  font-family: "Satoshi-Variable";
-  src:
-    local("Satoshi-Variable.ttf"),
-    url("https://cdn.discordapp.com/attachments/1420762958706901106/1420791962981630133/Satoshi-Variable.ttf?ex=68d6af21&is=68d55da1&hm=23db90c12f865d5153153ad374d85f8947f3ceafa665d11e6bf639d4e57d6ef9&")
+    font-family: "Satoshi-Variable";
+    src: url("/assets/Satoshi-Variable.ttf")
     format("truetype");
 }
 
 @font-face {
-  font-family: "PopJoy";
-  src:
-    local("PopJoy.otf"),
-    url("https://cdn.discordapp.com/attachments/1420762958706901106/1420792092929560700/PopJoy.otf?ex=68d6af3f&is=68d55dbf&hm=46b808575b84598db26ecae990bde8febf2648f40a020704e35682bbdd54e9e0&")
-    format("opentype");
+    font-family: "PopJoy";
+    src: url("/assets/PopJoy.otf") format("opentype");
 }
 
 /* Text font */
@@ -22,7 +17,7 @@ body, p, .info-box, .review-box, .points-positifs-box, .points-negatifs-box, .bt
 /* Titles and note font */
 h1, h2, h3, h4, h5, h6, .note-stars {
     font-family: 'PopJoy', sans-serif;
-}
+} 
 
 
 
