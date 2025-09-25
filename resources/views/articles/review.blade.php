@@ -64,7 +64,7 @@
                         $stars = str_repeat('★', $note) . str_repeat('☆', 10 - $note);
                     @endphp
                     <div class="mt-1 mb-2">
-                        <span class="ms-2" aria-label="note" style="letter-spacing:1px;">{{ $stars }}</span>
+                        <span class="ms-2 note-stars" aria-label="note" style="letter-spacing:1px;">{{ $stars }}</span>
                     </div>
                 @endif
 
