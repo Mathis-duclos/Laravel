@@ -35,6 +35,13 @@
                    value="{{ old('title', $article->title) }}" required>
         </div>
 
+        {{-- Éditeur --}}
+        <div class="mb-3">
+            <label for="editeur" class="form-label">Éditeur</label>
+            <input type="text" name="editeur" id="editeur" class="form-control"
+                   value="{{ old('editeur', $article->editeur) }}">
+        </div>
+
         {{-- Contenu --}}
         <div class="mb-3">
             <label for="content" class="form-label">Contenu</label>

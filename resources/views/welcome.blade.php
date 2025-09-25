@@ -33,6 +33,9 @@
                             @if($article->plateforme)
                                 — {{ $article->plateforme }}
                             @endif
+                            @if($article->editeur)
+                                — {{ $article->editeur }}
+                            @endif
                         </small>
                         <p>{{ Str::limit($article->content, 120) }}</p>
                     </li>

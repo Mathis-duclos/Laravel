@@ -20,6 +20,12 @@
             <input type="text" name="title" class="form-control" id="title" required>
         </div>
 
+        <!-- Éditeur -->
+        <div class="mb-3">
+            <label for="editeur" class="form-label">Éditeur</label>
+            <input type="text" name="editeur" class="form-control" id="editeur" value="{{ old('editeur') }}">
+        </div>  
+
         <!-- Contenu -->
         <div class="mb-3">
             <label for="content" class="form-label">Contenu</label>

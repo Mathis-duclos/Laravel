@@ -19,7 +19,12 @@
                 <span style="margin-left:8px;">{{ Auth::user()->name }}</span>
 
                 {{-- Liens privés (optionnels) --}}
-                <a href="{{ route('articles.index') }}" class="btn btn-sm btn-outline-secondary">Dashboard</a>
+@auth
+    @if(auth()->user()->admin == 1)
+        <a href="{{ route('articles.index') }}" class="btn btn-sm btn-outline-secondary">Dashboard</a>
+    @endif
+@endauth
+
                 {{-- Déconnexion (POST) --}}
                 <form action="{{ route('logout') }}" method="POST" style="display:inline;">
                     @csrf

@@ -32,6 +32,9 @@
             @if($article->annee_sortie)
                 <span class="ms-2">• {{ $article->annee_sortie }}</span>
             @endif
+            @if($article->editeur)
+                <span class="ms-2">• {{ $article->editeur }}</span>
+            @endif
         </div>
 
         @if(!is_null($article->note))
@@ -100,6 +103,9 @@
 
         <div class="d-flex gap-2">
             <a href="{{ route('articles.index') }}" class="btn btn-outline-secondary">← Retour</a>
+
+            @auth
+            @if(auth()->user()->admin == 1)
             <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-warning">Modifier</a>
             <form action="{{ route('articles.destroy', $article->id) }}" method="POST"
                   onsubmit="return confirm('Supprimer cet article ?');" class="d-inline">
@@ -107,6 +113,8 @@
                 @method('DELETE')
                 <button class="btn btn-danger">Supprimer</button>
             </form>
+            @endif
+            @endauth
         </div>
     </div>
 @endsection

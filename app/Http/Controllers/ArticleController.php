@@ -53,6 +53,7 @@ class ArticleController extends Controller
         $article->points_positifs  = $request->input('points_positifs');
         $article->points_negatifs  = $request->input('points_negatifs');
         $article->auteur_review    = $request->input('auteur_review');
+        $article->editeur         = $request->input('editeur');
 
         // Plus d'upload de fichier : on ne touche pas à $article->image
 
@@ -90,6 +91,7 @@ class ArticleController extends Controller
             'points_positifs'  => 'nullable|string',
             'points_negatifs'  => 'nullable|string',
             'auteur_review'    => 'nullable|string|max:255',
+            'editeur'          => 'nullable|string|max:255',
         ]);
 
         // ---- Mises à jour ----
@@ -105,6 +107,7 @@ class ArticleController extends Controller
         $article->points_positifs  = $request->input('points_positifs');
         $article->points_negatifs  = $request->input('points_negatifs');
         $article->auteur_review    = $request->input('auteur_review');
+        $article->editeur          = $request->input('editeur');
 
         // Plus d'upload de fichier
 

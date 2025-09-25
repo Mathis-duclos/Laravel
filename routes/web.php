@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Article; // ✅ IMPORTANT : import du modèle
+use App\Models\Article;
 
 // Accueil PUBLIC : derniers articles
 Route::get('/', function () {
@@ -15,13 +15,13 @@ Route::get('/', function () {
 Route::get('/review/{article:id}', [ArticleController::class, 'show'])
     ->name('articles.review');
 
-// Dashboard PROTÉGÉ
+// Dashboard PROTÉGÉ (auth + email vérifié + admin)
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified', 'admin'])->name('dashboard');
 
-// Routes PROTÉGÉES
-Route::middleware('auth')->group(function () {
+// Routes PROTÉGÉES (auth + admin)
+Route::middleware(['auth', 'admin'])->group(function () {
     // Profil
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
