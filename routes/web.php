@@ -7,7 +7,7 @@ use App\Models\Article;
 
 // Accueil PUBLIC : derniers articles
 Route::get('/', function () {
-    $articles = Article::latest()->take(5)->get();
+    $articles = Article::latest()->get();
     return view('welcome', compact('articles'));
 });
 

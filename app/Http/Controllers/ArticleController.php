@@ -15,6 +15,12 @@ class ArticleController extends Controller
         return view('articles.index', compact('articles'));
     }
 
+    public function home()
+    {
+        $articles = Article::orderBy('created_at', 'desc')->get(); // récupère tous les articles
+        return view('welcome', compact('articles'));
+    }
+
     // Formulaire de création d'un article
     public function create()
     {
