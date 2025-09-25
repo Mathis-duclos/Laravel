@@ -1,11 +1,16 @@
-/* Supprimer marges/paddings par défaut */
 html, body {
     margin: 0;
     padding: 0; 
 }
 
+html {
+    background-image: url('https://cdn.discordapp.com/attachments/1420762958706901106/1420763074499186688/BG_stars.jpg?ex=68d69439&is=68d542b9&hm=1aec5d9b9448c593af289b871d6459bc120fac20e2c1a0565600ed5387094967&');
+    background-repeat: repeat;
+    background-position: top left;
+    background-size: auto;
+}
 
-/* Image en haut en cover */
+/* Layout */
 .container img {
     display: block;
     width: 100%;
@@ -15,7 +20,6 @@ html, body {
     margin-bottom: 20px;
 }
 
-/* Deux colonnes spécifiques à la page review */
 .review-layout {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -24,62 +28,103 @@ html, body {
     padding-right: 24px;
 }
 
-/* Colonne 1 */
 .colonne-gauche {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 24px; 
 }
 
-/* Colonne 2 */
 .colonne-droite {
     display: flex;
     flex-direction: column;
-    gap: 0; 
+    gap: 0;
 }
 
-/* Image du background */
-
-html{
-    background-image: url('https://cdn.discordapp.com/attachments/1420762958706901106/1420763074499186688/BG_stars.jpg?ex=68d69439&is=68d542b9&hm=1aec5d9b9448c593af289b871d6459bc120fac20e2c1a0565600ed5387094967&');
-    background-repeat: repeat;
-    background-position: top left;
-    background-size: auto;
-    margin: 0;
-    padding: 0;
-}
-
-
-.info-box {
-    background-color: rgba(255, 255, 255, 0.8);
+/*  Boxes */
+.box {
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 16px;        
     border-radius: 8px;  
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15); 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
-/* Critique box  column 2 */
+.info-box {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 16px;        
+    border-radius: 8px;  
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
 .review-box {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 16px;
-    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 16px;        
+    border-radius: 8px;  
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     margin-bottom: 24px; 
 }
 
-/* Points positifs */
+/* Lists */
 .points-positifs-box {
-    background-color: rgba(212, 237, 218, 0.8); 
+    background-color: rgba(212, 237, 218, 0.5); 
     padding: 12px;
     border-radius: 8px;
     border: 1px solid #c3e6cb;
     margin-bottom: 24px; 
 }
 
-/* Points négatifs */
 .points-negatifs-box {
-    background-color: rgba(248, 215, 218, 0.8); 
+    background-color: rgba(248, 215, 218, 0.5); 
     padding: 12px;
     border-radius: 8px;
     border: 1px solid #f5c6cb;
     margin-bottom: 0;
+}
+
+.points-positifs-box ul,
+.points-negatifs-box ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+/* Buttons */
+.info-box .btn {
+    background-color: #1C62C1;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    transition: background-color 0.2s, transform 0.1s;
+    color: #fff;
+    text-decoration: none;
+    text-align: center; 
+    min-width: 100px;   
+    width: 100%;        
+    box-sizing: border-box;
+}
+
+.info-box .btn:hover {
+    background-color: #2E7AE1;
+    transform: translateY(-1px);
+    cursor: pointer;
+}
+
+.info-box .btn:active {
+    transform: translateY(1px);
+}
+
+.info-box .d-flex {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.info-box .d-flex form {
+    display: flex;
+    flex: 1;
+}
+
+.info-box .d-flex form .btn {
+    flex: 1;
+    min-width: 0;
 }

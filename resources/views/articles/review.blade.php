@@ -3,12 +3,11 @@
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/review.css') }}">
 @include('partials.header')
-{{-- le reste de ton layout --}}
+
 <div class="min-h-screen">
     @yield('content')
 </div>
 <div class="container py-3">
-    {{-- IMAGE: URL PUBLIQUE UNIQUEMENT --}}
     @if(!empty($article->image_url))
         <img
             src="{{ trim($article->image_url) }}"
@@ -65,17 +64,9 @@
                         $stars = str_repeat('★', $note) . str_repeat('☆', 10 - $note);
                     @endphp
                     <div class="mt-1 mb-2">
-                        <strong> <!--Note :</strong>  $note /10-->
                         <span class="ms-2" aria-label="note" style="letter-spacing:1px;">{{ $stars }}</span>
                     </div>
                 @endif
-
-                <div class="text-muted small mb-3">
-                    Publié le {{ $article->created_at?->format('d/m/Y H:i') }}
-                    @if($article->updated_at && $article->updated_at->ne($article->created_at))
-                        — MAJ {{ $article->updated_at->format('d/m/Y H:i') }}
-                    @endif
-                </div>
 
                 @if($article->content)
                     <div class="mb-3">
@@ -83,12 +74,39 @@
                         <p class="mb-0">{{ $article->content }}</p>
                     </div>
                 @endif
-
+            </div>
+            
+            <div class="info-box">
+                <div class="text-muted small mb-3">
+                    Publié le {{ $article->created_at?->format('d/m/Y H:i') }}
+                    @if($article->updated_at && $article->updated_at->ne($article->created_at))
+                        — MAJ {{ $article->updated_at->format('d/m/Y H:i') }}
+                    @endif
+                </div>
+                
                 @if($article->auteur_review)
                     <div class="mb-3 text-muted">
                         <strong>Auteur de la review :</strong> {{ $article->auteur_review }}
                     </div>
                 @endif
+            </div>
+
+            <div class="info-box">
+                <div class="d-flex gap-2">
+                    <a href="{{ route('articles.index') }}" class="btn btn">← Retour</a>
+
+                    @auth
+                        @if(auth()->user()->admin == 1)
+                            <a href="{{ route('articles.edit', $article->id) }}" class="btn btn">Modifier</a>
+                            <form action="{{ route('articles.destroy', $article->id) }}" method="POST"
+                                onsubmit="return confirm('Supprimer cet article ?');" class="d-flex">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn">Supprimer</button>
+                            </form>
+                        @endif
+                    @endauth
+                </div>
             </div>
         </div>
 
@@ -126,22 +144,6 @@
                 @endif
             </div>
         </div>
-    </div>
-
-    <div class="d-flex gap-2">
-        <a href="{{ route('articles.index') }}" class="btn btn-outline-secondary">← Retour</a>
-
-        @auth
-        @if(auth()->user()->admin == 1)
-        <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-warning">Modifier</a>
-        <form action="{{ route('articles.destroy', $article->id) }}" method="POST"
-                onsubmit="return confirm('Supprimer cet article ?');" class="d-inline">
-            @csrf
-            @method('DELETE')
-            <button class="btn btn-danger">Supprimer</button>
-        </form>
-        @endif
-        @endauth
     </div>
 </div>
 @endsection
