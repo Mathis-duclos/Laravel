@@ -29,6 +29,9 @@
                             </a>
                         </h3>
                         <small>
+                            @if ($article->image_art)
+                    <img src="{{ $article->image_art }}" alt="Image de l'article" style="width:200px;height:200px;object-fit:cover;">
+                @endif
                             Publié le {{ $article->created_at->format('d/m/Y H:i') }}
                             @if($article->plateforme)
                                 — {{ $article->plateforme }}
@@ -40,6 +43,7 @@
                         <p>{{ Str::limit($article->content, 120) }}</p>
                     </li>
                 @endforeach
+                
             </ul>
         @else
             <p>Aucun article pour le moment.</p>

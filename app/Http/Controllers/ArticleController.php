@@ -38,6 +38,7 @@ class ArticleController extends Controller
             'auteur_review'    => 'nullable|string|max:255',
             'editeur'          => 'nullable|string|max:255',
             'musique'         => 'nullable|string|max:255',
+            'image_art'        => 'nullable|string|max:255', // Nouvelle colonne
         ]);
 
         // ---- Création ----
@@ -57,6 +58,7 @@ class ArticleController extends Controller
         $article->auteur_review    = $request->input('auteur_review');
         $article->editeur         = $request->input('editeur');
         $article->musique         = $request->input('musique');
+        $article->image_art       = $request->input('image_art');  // Nouvelle colonne
 
         // Plus d'upload de fichier : on ne touche pas à $article->image
 
@@ -96,6 +98,7 @@ class ArticleController extends Controller
             'auteur_review'    => 'nullable|string|max:255',
             'editeur'          => 'nullable|string|max:255',
             'musique'          => 'nullable|string|max:255',
+            'image_art'        => 'nullable|string|max:255', // Nouvelle colonne
         ]);
 
         // ---- Mises à jour ----
@@ -113,6 +116,7 @@ class ArticleController extends Controller
         $article->auteur_review    = $request->input('auteur_review');
         $article->editeur          = $request->input('editeur');
         $article->musique          = $request->input('musique');
+        $article->image_art        = $request->input('image_art');  // Nouvelle colonne
 
         // Plus d'upload de fichier
 

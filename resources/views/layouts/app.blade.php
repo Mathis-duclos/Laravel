@@ -1,23 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    
+    {{-- 👉 Chaque vue peut injecter ses propres styles --}}
+    @stack('styles')
 </head>
-<body>
+<body class="bg-light">
 
+    {{-- Contenu des pages --}}
+    <main class="container-fluid py-4">
+        @yield('content')
+    </main>
 
-    <div class="container">
-        <header>
-        </header>
-
-        <!-- Page Content -->
-        <main>
-            @yield('content')  <!-- Affiche la section 'content' -->
-        </main>
-    </div>
+    {{-- 👉 Chaque vue peut injecter ses propres scripts --}}
+    @stack('scripts')
 </body>
 </html>
