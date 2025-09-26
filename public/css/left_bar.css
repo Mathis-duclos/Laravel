@@ -115,3 +115,16 @@ body {
     flex-direction: column;
     gap: 10px; /* espace entre Accueil et Dashboard */
 }
+
+.nav-bottom .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-bottom .user-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
