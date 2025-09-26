@@ -1,0 +1,92 @@
+/* Polices et fond identiques à review.css */
+@font-face {
+    font-family: "Satoshi-Variable";
+    src: url("/assets/Satoshi-Variable.ttf") format("truetype");
+}
+@font-face {
+    font-family: "PopJoy";
+    src: url("/assets/PopJoy.otf") format("opentype");
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/assets/BG_stars.jpg');
+    background-repeat: repeat;
+    background-position: top left;
+    font-family: 'Satoshi-Variable', sans-serif;
+    color: #2C3849;
+}
+
+/* Boîte principale inspirée de .info-box */
+.auth-box {
+    max-width: 420px;
+    margin: 80px auto;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 28px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Titre avec PopJoy */
+.auth-title {
+    font-family: 'PopJoy', sans-serif;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Inputs style comment-input */
+.auth-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    margin-top: 6px;
+    font-family: 'Satoshi-Variable', sans-serif;
+}
+
+/* Checkbox bleue */
+.auth-checkbox {
+    accent-color: #1C62C1;
+}
+
+/* Bouton principal */
+.btn-auth {
+    background-color: #1C62C1;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+.btn-auth:hover {
+    background-color: #2E7AE1;
+}
+
+/* Bouton Google */
+.btn-google {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #db4437;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: background 0.3s;
+    text-decoration: none;
+}
+.btn-google:hover {
+    background: #c1351d;
+}
+
+/* Lien secondaire */
+.auth-link {
+    font-size: 0.9rem;
+    color: #1C62C1;
+    text-decoration: none;
+}
+.auth-link:hover {
+    text-decoration: underline;
+}
