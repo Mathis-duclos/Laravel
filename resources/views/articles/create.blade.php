@@ -64,6 +64,7 @@
                                 <option value="Xbox Series X/S">Xbox Series X/S</option>
                                 <option value="Xbox One">Xbox One</option>
                                 <option value="Xbox 360">Xbox 360</option>
+                                <option value="Nintendo Switch 2">Nintendo Switch 2</option>
                                 <option value="Nintendo Switch">Nintendo Switch</option>
                                 <option value="Nintendo Wii U">Nintendo Wii U</option>
                                 <option value="Nintendo 3DS">Nintendo 3DS</option>
