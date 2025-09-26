@@ -1,0 +1,42 @@
+.site-footer {
+    background-color: #000; /* Gros footer noir */
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-names {
+    margin: 6px 0;
+    font-size: 1rem;
+}
+
+.footer-names a {
+    color: #FFD700; /* doré pour mettre en avant les mails */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-names a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-copy {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #aaa;
+}

@@ -165,12 +165,15 @@
                                                 </div>
 
 
-                        {{-- Auteur --}}
-                        <div class="mb-3">
-                            <label for="auteur_review" class="form-label">Auteur de la review</label>
-                            <input type="text" name="auteur_review" id="auteur_review" class="form-control"
-                                value="{{ old('auteur_review', $article->auteur_review) }}">
-                        </div>
+                        <!-- Auteur review (readonly) -->
+        <div class="mb-3">
+            <label for="auteur_review" class="form-label">Auteur de la review</label>
+            <input type="text" id="auteur_review" 
+                   class="form-control" 
+                   value="{{ $article->auteur_review }}" readonly disabled>
+            <!-- Champ hidden pour renvoyer la valeur -->
+            <input type="hidden" name="auteur_review" value="{{ $article->auteur_review }}">
+        </div>
 
                         {{-- Boutons --}}
                         <div class="d-flex justify-content-end gap-2">

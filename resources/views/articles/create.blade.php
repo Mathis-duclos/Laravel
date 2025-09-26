@@ -130,12 +130,15 @@
                             <input type="text" name="image_art" id="image_art" class="form-control">
                         </div>
 
-                        <!-- Auteur de la review -->
-                        <div class="mb-3">
-                            <label for="auteur_review" class="form-label">Auteur de la review</label>
-                            <input type="text" name="auteur_review" id="auteur_review" class="form-control">
-                        </div>
-
+                        <!-- Auteur review (readonly) -->
+        <div class="mb-3">
+            <label for="auteur_review" class="form-label">Auteur de la review</label>
+            <input type="text" id="auteur_review" 
+                   class="form-control" 
+                   value="{{ Auth::user()->name }}" readonly disabled>
+            <!-- Champ hidden pour envoyer quand même en BDD -->
+            <input type="hidden" name="auteur_review" value="{{ Auth::user()->name }}">
+        </div>
                         <!-- Boutons -->
                         <div class="d-flex justify-content-end gap-2">
                             <a href="{{ route('articles.index') }}" class="btn btn-outline-secondary btn-custom">Annuler</a>
@@ -153,3 +156,4 @@
 @push('scripts')
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 @endpush
+

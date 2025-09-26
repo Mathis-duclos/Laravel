@@ -16,4 +16,16 @@ class Article extends Model
         'points_positifs', 'points_negatifs', 'auteur_review',
         'image_url'
     ];
+
+public function user()
+{
+    return $this->belongsTo(User::class);
 }
+
+
+    public function comments()
+{
+    return $this->hasMany(Comment::class);
+}
+}
+

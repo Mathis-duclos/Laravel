@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Article;
+use App\Http\Controllers\CommentController;
 
 // Accueil PUBLIC : derniers articles
 Route::get('/', function () {
@@ -15,10 +16,15 @@ Route::get('/', function () {
 Route::get('/review/{article:id}', [ArticleController::class, 'show'])
     ->name('articles.review');
 
+// ✅ Commentaires accessibles à tous les utilisateurs connectés
+Route::post('/review/{id}/comments', [CommentController::class, 'store'])
+    ->name('comments.store')
+    ->middleware('auth');
+
 // Dashboard PROTÉGÉ (auth + email vérifié + admin)
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified', 'admin'])->name('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 // Routes PROTÉGÉES (auth + admin)
 Route::middleware(['auth', 'admin'])->group(function () {

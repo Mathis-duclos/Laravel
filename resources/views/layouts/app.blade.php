@@ -6,17 +6,20 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    {{-- 👉 Chaque vue peut injecter ses propres styles --}}
     @stack('styles')
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 </head>
-<body class="bg-light">
+<body>
+    <div class="page-wrapper">
+        {{-- Contenu de la page --}}
+        <main class="page-content">
+            @yield('content')
+        </main>
 
-    {{-- Contenu des pages --}}
-    <main class="container-fluid py-4">
-        @yield('content')
-    </main>
+        {{-- Footer affiché partout --}}
+        @include('partials.footer')
+    </div>
 
-    {{-- 👉 Chaque vue peut injecter ses propres scripts --}}
     @stack('scripts')
 </body>
 </html>

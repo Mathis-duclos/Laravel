@@ -34,17 +34,16 @@ class ArticleController extends Controller
         $request->validate([
             'title'            => 'required|string|max:255',
             'content'          => 'required|string',
-            'image_url'        => 'nullable|string|max:2048', // URL publique
+            'image_url'        => 'nullable|string|max:2048',
             'plateforme'       => 'nullable|string|max:255',
             'annee_sortie'     => 'nullable|integer',
             'note'             => 'nullable|integer|between:1,10',
             'review'           => 'nullable|string',
             'points_positifs'  => 'nullable|string',
             'points_negatifs'  => 'nullable|string',
-            'auteur_review'    => 'nullable|string|max:255',
             'editeur'          => 'nullable|string|max:255',
-            'musique'         => 'nullable|string|max:255',
-            'image_art'        => 'nullable|string|max:255', // Nouvelle colonne
+            'musique'          => 'nullable|string|max:255',
+            'image_art'        => 'nullable|string|max:255',
         ]);
 
         // ---- Création ----
@@ -52,21 +51,19 @@ class ArticleController extends Controller
         $article->title            = $request->input('title');
         $article->content          = $request->input('content');
         $article->user_id          = Auth::id();
+        $article->auteur_review    = Auth::user()->name; // ✅ Nom auto
 
         // Nouvelles colonnes
         $article->image_url        = trim((string) $request->input('image_url'));
         $article->plateforme       = $request->input('plateforme');
-        $article->annee_sortie     = $request->integer('annee_sortie'); // cast int
-        $article->note             = $request->integer('note');          // cast int
+        $article->annee_sortie     = $request->integer('annee_sortie');
+        $article->note             = $request->integer('note');
         $article->review           = $request->input('review');
         $article->points_positifs  = $request->input('points_positifs');
         $article->points_negatifs  = $request->input('points_negatifs');
-        $article->auteur_review    = $request->input('auteur_review');
-        $article->editeur         = $request->input('editeur');
-        $article->musique         = $request->input('musique');
-        $article->image_art       = $request->input('image_art');  // Nouvelle colonne
-
-        // Plus d'upload de fichier : on ne touche pas à $article->image
+        $article->editeur          = $request->input('editeur');
+        $article->musique          = $request->input('musique');
+        $article->image_art        = $request->input('image_art');
 
         $article->save();
 
@@ -94,24 +91,21 @@ class ArticleController extends Controller
         $request->validate([
             'title'            => 'required|string|max:255',
             'content'          => 'required|string',
-            'image_url'        => 'nullable|string|max:2048', // URL publique
+            'image_url'        => 'nullable|string|max:2048',
             'plateforme'       => 'nullable|string|max:255',
             'annee_sortie'     => 'nullable|integer',
             'note'             => 'nullable|integer|between:1,10',
             'review'           => 'nullable|string',
             'points_positifs'  => 'nullable|string',
             'points_negatifs'  => 'nullable|string',
-            'auteur_review'    => 'nullable|string|max:255',
             'editeur'          => 'nullable|string|max:255',
             'musique'          => 'nullable|string|max:255',
-            'image_art'        => 'nullable|string|max:255', // Nouvelle colonne
+            'image_art'        => 'nullable|string|max:255',
         ]);
 
         // ---- Mises à jour ----
         $article->title            = $request->input('title');
         $article->content          = $request->input('content');
-
-        // Nouvelles colonnes
         $article->image_url        = trim((string) $request->input('image_url'));
         $article->plateforme       = $request->input('plateforme');
         $article->annee_sortie     = $request->integer('annee_sortie');
@@ -119,12 +113,9 @@ class ArticleController extends Controller
         $article->review           = $request->input('review');
         $article->points_positifs  = $request->input('points_positifs');
         $article->points_negatifs  = $request->input('points_negatifs');
-        $article->auteur_review    = $request->input('auteur_review');
         $article->editeur          = $request->input('editeur');
         $article->musique          = $request->input('musique');
-        $article->image_art        = $request->input('image_art');  // Nouvelle colonne
-
-        // Plus d'upload de fichier
+        $article->image_art        = $request->input('image_art');
 
         $article->save();
 

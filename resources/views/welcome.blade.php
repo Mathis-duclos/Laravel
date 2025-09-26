@@ -1,5 +1,9 @@
+@extends('layouts.app')
 <!DOCTYPE html>
 <html lang="en">
+        <main class="container-fluid py-4">
+        @yield('content')
+    </main>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +22,8 @@
 
     <section class="hero-section">
         <h1>Bienvene sur NOM DU SITE!</h1>
-        <p>This is the welcome page.</p>
+        <br>
+        <h2>Le meilleur site de review de l'IUT<h2>
 
     </section>
 
