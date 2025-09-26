@@ -17,6 +17,14 @@
                 @endauth
             </div>
 
+            @if(Auth::user()->avatar)
+    <img src="{{ Auth::user()->avatar }}" alt="Avatar"
+         class="rounded-full w-10 h-10 object-cover">
+@else
+    <img src="/images/default-avatar.png" alt="Avatar"
+         class="rounded-full w-10 h-10 object-cover">
+@endif
+
             <div class="nav-bottom">
                 <hr class="nav-separator">
                 @guest
