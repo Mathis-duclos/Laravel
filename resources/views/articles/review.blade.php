@@ -309,4 +309,6 @@
         </form>
     @endauth
 </div>
+</br></br>
 @endsection
+<!-- Footer -->

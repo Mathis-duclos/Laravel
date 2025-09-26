@@ -1,6 +1,6 @@
 <footer class="site-footer">
     <div class="footer-container">
-        <p class="footer-title">Créateurs du site</p>
+        <p class="footer-title">Contact</p>
         <p class="footer-names">
             <strong>Thibaud VON BOROWSKI</strong> – 
             <a href="mailto:thibaud.von-borowski@mmibordeaux.com">thibaud.von-borowski@mmibordeaux.com</a>

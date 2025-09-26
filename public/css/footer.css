@@ -2,8 +2,9 @@
     background-color: #000; /* Gros footer noir */
     color: #fff;
     padding: 40px 20px;
-    text-align: center;
-    margin-top: 40px;
+    width: 100%;
+    left: 0;
+    right: 0;
 }
 
 .footer-container {
@@ -25,7 +26,7 @@
 }
 
 .footer-names a {
-    color: #FFD700; /* doré pour mettre en avant les mails */
+    color: #D0E4FE; /* bleu, car on reste dans la DA, thibaud !!! :/ merci  */
     text-decoration: none;
     transition: color 0.2s ease;
 }
