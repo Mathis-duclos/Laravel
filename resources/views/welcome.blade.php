@@ -29,7 +29,9 @@
 
     {{-- Derniers articles --}}
     <section class="articles-section">
-        <h2>Articles récents</h2>
+        <div class="articles-box">
+            <h2>Articles récents</h2>
+        </div>
 
         @if($articles->count() > 0)
             <div class="articles-grid">
