@@ -3,7 +3,7 @@
 <header class="site-header">
     <div class="header-content">
         <div>
-            <a href="{{ url('/') }}" class="logo">Nom du site</a>
+            <a href="{{ url('/') }}" class="logo">Les reviews étoilées </a>
         </div>
 
         <nav>

@@ -21,7 +21,7 @@
     </div>
 
     <section class="hero-section">
-        <h1>Bienvene sur NOM DU SITE!</h1>
+        <h1>Bienvene sur les reviews étoilées !</h1>
         <br>
         <h2>Le meilleur site de review de l'IUT<h2>
 
