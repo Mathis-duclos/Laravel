@@ -20,6 +20,12 @@ h1, h2, h3, h4, h5, h6, .note-stars {
 } 
 
 
+.container img {
+    max-height: 500px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
 
 html, body {
     margin: 0;
@@ -37,7 +43,7 @@ html {
 .container img {
     display: block;
     width: 100%;
-    max-height: 300px;
+    max-height: 450px;
     object-fit: cover;
     border-radius: 0;
     margin-bottom: 20px;
