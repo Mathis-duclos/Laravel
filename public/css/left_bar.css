@@ -87,7 +87,11 @@ a{
     font-size: 13px;
     padding: 0 14px;
     margin-bottom: 10px;
+    display: inline-block;
+    margin: 0;
 }
+
+
 
 /* Boutons */
 .btn {
@@ -120,11 +124,13 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    line-height: 1;
 }
 
 .nav-bottom .user-info img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    border-radius: 15%;
     object-fit: cover;
 }
+
