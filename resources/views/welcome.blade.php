@@ -1,86 +1,80 @@
 @extends('layouts.app')
 <!DOCTYPE html>
 <html lang="en">
-        <main class="container-fluid py-4">
-        @yield('content')
-    </main>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site</title>
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 </head>
 <body>
     @include('partials.header')
 
-@section('content')
-<link rel="stylesheet" href="{{ asset('css/home.css') }}">
-@include('partials.header')
-
-    <div class="min-h-screen">
-        @yield('content')
-    </div>
-
-    <section class="hero-section">
-        <h1>Bienvene sur les reviews étoilées !</h1>
-        <br>
-        <h2>Le meilleur site de review de l'IUT<h2>
-
-    </section>
-
-    {{-- Derniers articles --}}
-    <section class="articles-section">
-        <div class="articles-box">
-            <h2>Articles récents</h2>
+    <main class="container-fluid py-4">
+        <div class="min-h-screen">
+            @yield('content')
         </div>
 
-        @if($articles->count() > 0)
-            <div class="articles-grid">
-                @foreach($articles as $article)
-                    <div class="card">
-                        <div class="image-container">
-                            @if ($article->image_art)
-                                <a href="{{ route('articles.review', $article->id) }}" class="image-link">
-                                    <img src="{{ $article->image_art }}" alt="Image de l'article" class="card-image">
-                                </a>
-                            @else
-                                <a href="{{ route('articles.review', $article->id) }}" class="image-link">
-                                    <img src="https://via.placeholder.com/300x300?text=Pas+d'image" alt="Image de l'article" class="card-image">
-                                </a>
-                            @endif
+        <section class="hero-section">
+            <h1>Bienvene sur les reviews étoilées !</h1>
+            <br>
+            <h2>Le meilleur site de review de l'IUT</h2>
+        </section>
 
-                            <!-- Overlay dégradé pour rendre le texte lisible -->
-                            <div class="overlay">
-                                <h3 class="overlay-title">
-                                    <a href="{{ route('articles.review', $article->id) }}">{{ $article->title }}</a>
-                                </h3>
+        {{-- Derniers articles --}}
+        <section class="articles-section">
+            <div class="articles-box">
+                <h2>Articles récents</h2>
+            </div>
+
+            @if($articles->count() > 0)
+                <div class="articles-grid">
+                    @foreach($articles as $article)
+                        <div class="card">
+                            <div class="image-container">
+                                @if ($article->image_art)
+                                    <a href="{{ route('articles.review', $article->id) }}" class="image-link">
+                                        <img src="{{ $article->image_art }}" alt="Image de l'article" class="card-image">
+                                    </a>
+                                @else
+                                    <a href="{{ route('articles.review', $article->id) }}" class="image-link">
+                                        <img src="https://via.placeholder.com/300x300?text=Pas+d'image" alt="Image de l'article" class="card-image">
+                                    </a>
+                                @endif
+
+                                <!-- Overlay dégradé pour rendre le texte lisible -->
+                                <div class="overlay">
+                                    <h3 class="overlay-title">
+                                        <a href="{{ route('articles.review', $article->id) }}">{{ $article->title }}</a>
+                                    </h3>
+                                </div>
+                            </div>
+
+                            <!-- Partie blanche cachée, visible uniquement au hover -->
+                            <div class="hidden-text">
+                                <small>
+                                    @if($article->plateforme)
+                                        {{ $article->plateforme }}
+                                    @endif
+                                    @if($article->editeur)
+                                        — {{ $article->editeur }}
+                                    @endif
+                                </small>
+                                <p>{{ Str::limit($article->content, 150) }}</p>
                             </div>
                         </div>
+                    @endforeach
+                </div>
+            @else
+                <p>Aucun article pour le moment.</p>
+            @endif
+        </section>
 
-                        <!-- Partie blanche cachée, visible uniquement au hover -->
-                        <div class="hidden-text">
-                            <small>
-                                @if($article->plateforme)
-                                    {{ $article->plateforme }}
-                                @endif
-                                @if($article->editeur)
-                                    — {{ $article->editeur }}
-                                @endif
-                            </small>
-                            <p>{{ Str::limit($article->content, 150) }}</p>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        @else
-            <p>Aucun article pour le moment.</p>
-        @endif
-    </section>
-
-    
-    {{-- Form logout (inutile sur welcome si public, mais tu peux le garder) --}}
-    <form method="POST" action="{{ route('logout') }}">
-        @csrf
-    </form>
+        {{-- Form logout (inutile sur welcome si public, mais tu peux le garder) --}}
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+        </form>
+    </main>
 
     <style>
     /* Grid */
@@ -172,5 +166,27 @@
         .card { width:100%; }
     }
     </style>
+
+    <!-- Bouton retour en haut -->
+    <button id="backToTop" title="Retour en haut"></button>
+
+    <script>
+        // Get the button
+        const backToTopButton = document.getElementById("backToTop");
+
+        // When the user scrolls down 100px from the top of the document, show the button
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        // When the user clicks on the button, scroll to the top of the document
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
 </body>
 </html>

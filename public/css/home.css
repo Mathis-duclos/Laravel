@@ -88,4 +88,26 @@ h1, h2, h3, h4, h5, h6, .note-stars {
     text-align: center;
 }
 
-.articles-box {
+#backToTop {
+    display: none; /* masqué par défaut */
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5); /* fond blanc autour de l'image */
+    background-image: url('/assets/Luigi_idle.png'); /* image normale */
+    background-size: 50%; /* ajuste la taille de l'image à l'intérieur du cercle */
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.3s, transform 0.2s;
+}
+
+#backToTop:hover {
+    background-image: url('/assets/Luigi_jumping.png'); /* image au hover */
+    transform: scale(1.1); /* léger zoom au hover */
+}
