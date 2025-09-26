@@ -35,7 +35,7 @@ html, body {
 }
 
 html {
-    background-image: url('https://cdn.discordapp.com/attachments/1420762958706901106/1420763074499186688/BG_stars.jpg?ex=68d69439&is=68d542b9&hm=1aec5d9b9448c593af289b871d6459bc120fac20e2c1a0565600ed5387094967&');
+    background-image: url('/assets/BG_stars.jpg');
     background-repeat: repeat;
     background-position: top left;
     background-size: auto;
