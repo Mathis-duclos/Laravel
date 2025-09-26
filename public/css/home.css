@@ -17,6 +17,7 @@ body, p, .info-box, .review-box, .points-positifs-box, .points-negatifs-box, .bt
 /* Titles and note font */
 h1, h2, h3, h4, h5, h6, .note-stars {
     font-family: 'PopJoy', sans-serif;
+    color : #2C3849 ;
 } 
 
 .hero-section {
@@ -57,5 +58,34 @@ h1, h2, h3, h4, h5, h6, .note-stars {
 
 .articles-section h2 {
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    margin-left: 16px;
+    margin-right: 16px;
+    text-align: center;
+    font-size: 2rem;
+}   
+
+.hero-box {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 16px;
+    border-radius: 28px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    display: inline-block;
 }
+
+.articles-box {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 16px;
+    border-radius: 28px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    margin: 0 auto 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.articles-section {
+    text-align: center;
+}
+
+.articles-box {
