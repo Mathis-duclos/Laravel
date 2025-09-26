@@ -12,11 +12,13 @@
 /* Text font */
 body, p, .info-box, .review-box, .points-positifs-box, .points-negatifs-box, .btn {
     font-family: 'Satoshi-Variable', sans-serif;
+    color : #2C3849 ;
 }
 
 /* Titles and note font */
 h1, h2, h3, h4, h5, h6, .note-stars {
     font-family: 'PopJoy', sans-serif;
+    color : #2C3849 ;
 } 
 
 
@@ -214,6 +216,7 @@ html {
     resize: none;
     font-family: 'Satoshi-Variable', sans-serif;
     font-size: 1rem;
+    color : #2C3849 ;
 }
 
 .comment-btn {
