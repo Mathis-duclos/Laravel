@@ -5,12 +5,16 @@ use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Article;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\Auth\GoogleController;
 
 // Accueil PUBLIC : derniers articles
 Route::get('/', function () {
     $articles = Article::latest()->get();
     return view('welcome', compact('articles'));
 });
+
+Route::get('auth/google', [GoogleController::class, 'redirect'])->name('google.redirect');
+Route::get('auth/google/callback', [GoogleController::class, 'callback'])->name('google.callback');
 
 // Page review PUBLIC (détail d’un article par id)
 Route::get('/review/{article:id}', [ArticleController::class, 'show'])
