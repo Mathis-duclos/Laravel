@@ -46,7 +46,7 @@
                             .music-player .play-btn {
                                 border: none;
                                 background: #1C62C1;
-                                border-radius: 50%;
+                                border-radius:12px;
                                 width: 50px;
                                 height: 50px;
                                 cursor: pointer;
